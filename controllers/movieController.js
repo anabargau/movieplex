@@ -2,7 +2,6 @@ const Movie = require('../models/movie');
 const Genre = require('../models/genre');
 const async = require('async');
 const { body, validationResult } = require('express-validator');
-const movie = require('../models/movie');
 
 exports.movie_list = function (req, res, next) {
   Movie.find().exec((err, movies) => {
