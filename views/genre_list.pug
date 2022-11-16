@@ -1,0 +1,9 @@
+extends layout
+
+block content 
+  div.genre-list-container 
+    button.genre-btn #[a(href='/genre/create') +]
+    for genre in genres 
+      button.genre-btn #[a(href=genre.url) #{genre.name}] 
+    else 
+      div There are no genres yet.

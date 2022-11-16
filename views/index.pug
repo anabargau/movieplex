@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div.index-container 
+    div.index-title LATEST
+    div.index-flex
+      for movie in latest_movies 
+        a.index-movie(href=movie.url)
+          img.index-img(src=movie.img)
+      else 
+        div.no-movies-msg There are no movies yet
+  div.index-container
+    div.index-title TOP RATED
+    div.index-flex
+      for movie in best_movies 
+        a.index-movie(href=movie.url)
+          img.index-img(src=movie.img)
+      else 
+        div.no-movies-msg There are no movies yet

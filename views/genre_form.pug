@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+  div.genre-form-container
+    div.genre-form-title #{title}
+    form(method='POST' action='')
+      div.genre-form-group
+        label(for='genre-name') Genre Name: 
+        input#genre-name(type='text' name='name' placeholder='new genre name...' required='true' value=(genre===undefined ? '' : genre.name)) 
+      div.genre-btns-container
+        button.primary-btn(type='submit') Submit
+        button.primary-btn(type='button') #[a(href=(genre ? genre.url : '/genre/genre_list')) Cancel]
+    
+    if errors 
+      ul
+      for error in errors 
+        li!=error.msg

@@ -1,0 +1,11 @@
+extends layout
+
+block content 
+  div.grid-container
+    button.add-movie-btn.primary-btn 
+      a(href='/movie/create') Add Movie +
+    div.movie-grid 
+      each movie in movies 
+        a.movie-item(href=movie.url)
+          img.movie-img(src=movie.img)
+          div.movie-item-title #{movie.title}(#{movie.year})

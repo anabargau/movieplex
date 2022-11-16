@@ -1,0 +1,42 @@
+extends layout 
+
+block content 
+
+  div.movie-form-container 
+    div.movie-form-title #{title}
+    form(method='POST' action='')
+      div.movie-form-group
+        label(for='title') Title:
+        input#title(type='text' name='title' placeholder='movie title...' required='true' value=(undefined===movie ? '' : movie.title))
+      div.movie-form-group 
+        label(for='rating') Rating: 
+        input#rating(type='number' name='rating' placeholder='rating of the movie...' required='true' min='1' max='10' step='0.1' value=(undefined===movie ? '' : movie.rating))
+      div.movie-form-group 
+        label(for='director') Director: 
+        input#director(type='text' name='director' placeholder='director of the movie...' required='true' value=(undefined===movie ? '' : movie.director))
+      div.movie-form-group 
+        label(for='year') Year: 
+        input#year(type='number' name='year' placeholder='release year...' required='true' value=(undefined===movie ? '' : movie.year))
+      div.movie-form-group 
+        label(for='synopsis') Synopsis: 
+        input#synopsis(type='text' name='synopsis' placeholder='plot of the movie...' required='true' value=(undefined===movie ? '' : movie.synopsis))
+      div.movie-form-group 
+        label(for='img-url') Image url: 
+        input#img-url(type='url' name='img' placeholder='poster of the movie...' value=(undefined===movie ? '' : movie.img==='https://i.postimg.cc/sXWsQTrR/no-image.png' ? '' : movie.img ))
+      div.movie-form-group.genre-form-group
+        label Genre: 
+        div 
+          for genre in genres 
+            div.genre-input 
+              input(type='checkbox' name='genre' id=genre._id value=genre._id checked=genre.checked)
+              label(for=genre._id) #{genre.name}
+      div.btns-container
+        button.primary-btn(type='submit') Submit
+        button.primary-btn(type='button') #[a(href=(movie ? movie.url : '/movie/movie_list')) Cancel]
+    
+    if errors 
+      ul 
+       for error in errors 
+        li!= error.msg 
+
+      

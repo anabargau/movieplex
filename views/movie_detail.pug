@@ -1,0 +1,28 @@
+extends layout 
+
+block content
+  div.title #{title}(#{movie.year})
+
+  div.movie-detail-container 
+    img(src=movie.img) 
+    div.movie-detail
+      div.movie-detail-group 
+        div.movie-detail-label Rating: 
+        div.movie-detail-info #{movie.rating}
+      div.movie-detail-group 
+        div.movie-detail-label Director: 
+        div.movie-detail-info #{movie.director}
+      div.movie-detail-group 
+        div.movie-detail-label Synopsis: 
+        div.movie-detail-info #{movie.synopsis}
+      div.movie-detail-group 
+        div.movie-detail-label Genres: 
+        div.movie-detail-genre
+          for genre in movie.genre
+            button.movie-genre-btn.primary-btn #[a(href=genre.url) #{genre.name}]
+      div.control-link-container
+        a.delete-movie(href=movie.url+'/delete') Delete movie 
+        a.update-movie(href=movie.url+'/update') Update movie
+   
+
+      

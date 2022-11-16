@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.nav-bar
+      a.app-title(href='/') MOVIEPLEX 
+      div.nav-links 
+        a(href='/') HOME
+        a(href='/movie/movie_list') MOVIES 
+        a(href='/genre/genre_list') GENRES
+    div.content-container 
+      block content 
+
