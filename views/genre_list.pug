@@ -4,6 +4,6 @@ block content
   div.genre-list-container 
     button.genre-btn #[a(href='/genre/create') +]
     for genre in genres 
-      button.genre-btn #[a(href=genre.url) #{genre.name}] 
+      a.genre-btn-link(href=genre.url) #[button.genre-btn #{genre.name}]
     else 
       div There are no genres yet.
