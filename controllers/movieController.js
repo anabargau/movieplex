@@ -81,7 +81,7 @@ exports.movie_create_post = [
       year: req.body.year,
       synopsis: req.body.synopsis,
       img:
-        req.body.img === 'undefined'
+        req.body.img === ''
           ? 'https://i.postimg.cc/sXWsQTrR/no-image.png'
           : req.body.img,
       genre: req.body.genre,

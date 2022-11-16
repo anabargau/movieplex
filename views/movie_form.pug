@@ -22,7 +22,7 @@ block content
         input#synopsis(type='text' name='synopsis' placeholder='plot of the movie...' required='true' value=(undefined===movie ? '' : movie.synopsis))
       div.movie-form-group 
         label(for='img-url') Image url: 
-        input#img-url(type='url' name='img' placeholder='poster of the movie...' value=(undefined===movie ? '' : movie.img==='https://i.postimg.cc/sXWsQTrR/no-image.png' ? '' : movie.img ))
+        input#img-url(type='text' name='img' placeholder='poster of the movie...' value=(undefined===movie ? '' : movie.img==='https://i.postimg.cc/sXWsQTrR/no-image.png' ? '' : movie.img ))
       div.movie-form-group.genre-form-group
         label Genre: 
         div 
