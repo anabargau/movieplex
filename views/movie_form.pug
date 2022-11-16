@@ -34,8 +34,8 @@ block content
         button.primary-btn(type='submit') Submit
         button.primary-btn(type='button') #[a(href=(movie ? movie.url : '/movie/movie_list')) Cancel]
     
-    if errors 
-      ul 
+    if errors
+      ul.errors 
        for error in errors 
         li!= error.msg 
 

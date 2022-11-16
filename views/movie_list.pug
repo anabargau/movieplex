@@ -2,8 +2,7 @@ extends layout
 
 block content 
   div.grid-container
-    button.add-movie-btn.primary-btn 
-      a(href='/movie/create') Add Movie +
+    a.add-movie-link(href='/movie/create') #[button.add-movie-btn.primary-btn Add Movie +]
     div.movie-grid 
       each movie in movies 
         a.movie-item(href=movie.url)

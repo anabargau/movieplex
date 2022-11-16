@@ -12,6 +12,6 @@ block content
         button.primary-btn(type='button') #[a(href=(genre ? genre.url : '/genre/genre_list')) Cancel]
     
     if errors 
-      ul
+      ul.errors
       for error in errors 
         li!=error.msg
