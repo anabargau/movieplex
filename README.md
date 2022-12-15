@@ -4,4 +4,4 @@ This is the first CRUD app that I have done by myself using Express, the NodeJS 
 
 ## Live app 
 
-You can check it out [here](https://young-mountain-45862.herokuapp.com/).
+You can check it out [here](https://web-production-3f33.up.railway.app/).
