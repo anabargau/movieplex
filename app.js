@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const mongoDB =
-  'mongodb+srv://movieplexusername:movieplexpassword@cluster0.vs633yb.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://movieplex:movieplex-secret@cluster0.qo95w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
